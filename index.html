@@ -238,111 +238,154 @@ header -->
  header -->
 
     <!--=================================
- banner -->
+banner -->
     <style type="text/css">
-        rs-fullwidth-wrap {
+        .hero-seq {
             position: relative;
             width: 100%;
-            height: auto;
-            display: block;
-            overflow: visible;
-            max-width: none !important;
+            background: #050505;
         }
 
-        rs-fw-forcer {
+        .hero-seq-stage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 480px;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        .hero-sequence-canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
             display: block;
             width: 100%;
+            height: 100%;
+            filter: brightness(1.3) contrast(0.95);
+            -webkit-filter: brightness(1.3) contrast(0.95);
+        }
+
+        .hero-seq-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: rgba(60, 60, 60, 0.45);
+        }
+
+        .hero-seq-content {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            padding: 90px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-seq-title {
+            margin: 0;
+            color: #fff;
+            font-family: 'Poppins', 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: clamp(30px, 5.5vw, 73px);
+            line-height: 1.1;
+        }
+
+        .hero-seq-title span {
+            color: #c90400;
+            font-weight: 600;
+        }
+
+        .hero-seq-text {
+            margin: 0;
+            color: #fff;
+            font-family: 'Poppins', 'Open Sans', sans-serif;
+            font-size: clamp(14px, 1.6vw, 20px);
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        .hero-sequence-loading {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            display: grid;
+            place-content: center;
+            gap: 12px;
+            padding: 24px;
+            color: #fff;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(35, 35, 35, 0.96), rgba(5, 5, 5, 0.98) 58%);
+            transition: opacity 0.45s ease, visibility 0.45s ease;
+        }
+
+        .hero-sequence-loading[aria-hidden="true"] {
+            visibility: hidden;
+            opacity: 0;
             pointer-events: none;
         }
 
-        /* Ensure overlay covers full screen */
-        #slider-2-slide-4-layer-0 {
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
+        .hero-sequence-loading p {
+            margin: 0;
+            font-size: 13px;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.12em;
         }
 
-        .new-slider-v6 {
-            width: 100%;
+        .hero-sequence-progress {
+            width: min(300px, 70vw);
+            height: 2px;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .new-slider-v6 rs-module-wrap,
-        .new-slider-v6 rs-module,
-        .new-slider-v6 rs-slides,
-        .new-slider-v6 rs-slide {
-            width: 100% !important;
+        .hero-sequence-progress span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: #fff;
+            transition: width 0.12s linear;
         }
 
-        /* Brighten banner image for better logo visibility */
-        .new-slider-v6 .rev-slidebg {
-            filter: brightness(1.3) contrast(0.95);
-            -webkit-filter: brightness(1.3) contrast(0.95);
+        @media (prefers-reduced-motion: reduce) {
+            .hero-sequence-loading {
+                transition: none;
+            }
         }
 
         /* Lighten header area for logo visibility */
         header#header {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
         }
-
-
     </style>
-    <div class="new-slider-v6">
-        <rs-module-wrap id="rev_slider_2_1_wrapper" data-alias="zitec-slider2" data-source="gallery"
-            style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-            <rs-module id="rev_slider_2_1" data-version="6.6.13">
-                <rs-slides style="overflow: hidden; position: absolute;">
-                    <rs-slide style="position: absolute;" data-key="rs-4" data-title="Slide"
-                        data-thumb="images1/weldingPicture.jpg" data-in="o:0;" data-out="a:false;">
-                        <img src="images1/weldingPicture.jpg" alt="שירותי ריתוך וייצור זיווד אלקטרוני"
-                            class="rev-slidebg tp-rs-img" data-no-retina>
-                        <!--
-                    --><rs-layer id="slider-2-slide-4-layer-0" data-type="shape" data-rsp_ch="on" data-xy="x:c;y:c;"
-                            data-text="w:normal;" data-dim="w:100%;h:100%;" data-basealign="slide"
-                            data-frame_0="opacity:0;" data-frame_1="st:0;sp:1000;" data-frame_999="o:0;st:w;"
-                            style="z-index:6;background-color:rgba(128, 128, 128, 0.451);width:100%;height:100%;">
-                        </rs-layer><!--
-
-                    --><rs-layer id="slider-2-slide-4-layer-6" data-type="text" data-color="rgba(201,1,1,1)"
-                            data-rsp_ch="on" data-xy="x:c;y:c;yo:-75px;" data-text="s:28;l:34;fw:900;a:inherit;"
-                            data-frame_0="y:50px;" data-frame_1="e:power1.out;st:1230;sp:1000;sR:1230;"
-                            data-frame_999="o:0;st:w;sR:6770;" style="z-index:7;font-family:'Roboto';">
-                        </rs-layer><!--
-
-                    --><rs-layer id="slider-2-slide-4-layer-7" data-type="text" data-color="rgba(255,255,255,1)"
-                            data-rsp_ch="on" data-xy="x:c;y:c;yo:-10px;" data-text="s:73;l:73;fw:500;a:inherit;"
-                            data-frame_0="y:50px;" data-frame_1="e:power1.out;st:1940;sp:1000;sR:1940;"
-                            data-frame_999="o:0;st:w;sR:6060;"
-                            style="z-index:8;font-family:'Poppins', 'Open Sans', sans-serif;font-weight:300;"><span
-                                style="color: #c90400; font-weight: 600;">Zitec -</span>
-                            זיווד
-                            וטכנולוגיות בע"מ
-                        </rs-layer><!--
-
-                    --><rs-layer id="slider-2-slide-4-layer-8" data-type="text" data-color="rgba(255,255,255,1)"
-                            data-rsp_ch="on" data-xy="x:c;y:c;yo:90px;" data-text="s:20;l:32;a:center;"
-                            data-frame_0="y:50px;" data-frame_1="e:power1.out;st:2650;sp:1000;sR:2650;"
-                            data-frame_999="o:0;st:w;sR:5350;"
-                            style="z-index:9;font-family:'Poppins', 'Open Sans', sans-serif;">חברת זיטק- זיווד
-                            וטכנולוגיות בע"מ היא מפעל המתמחה בייצור זיווד אלקטרוני,
-
-                            <br>
-                            אבות טיפוס,
-                            דגמים וסדרות ייצור לתעשייה הרפואית, תעשיית הדפוס ועוד, וכן בייצור מבלטים ועבודות כבישה
-                            <br>
-                            תוך הקפדה על איכות גבוהה ומועדי אספקה קצרים במיוחד.
-
-
-                        </rs-layer>
-
-
-                    </rs-slide>
-                </rs-slides>
-            </rs-module>
-        </rs-module-wrap>
-    </div>
+    <section class="hero-seq" id="hero-sequence" aria-label="אנימציית פתיחה הנשלטת בגלילה">
+        <div class="hero-seq-stage">
+            <canvas id="hero-sequence-canvas" class="hero-sequence-canvas" width="1280" height="720" role="img"
+                aria-label="אנימציית ייצור הנשלטת באמצעות גלילה"></canvas>
+            <div class="hero-seq-overlay" aria-hidden="true"></div>
+            <div class="hero-seq-content">
+                <p class="hero-seq-title"><span>Zitec -</span> זיווד וטכנולוגיות בע"מ</p>
+                <p class="hero-seq-text">חברת זיטק- זיווד וטכנולוגיות בע"מ היא מפעל המתמחה בייצור זיווד אלקטרוני,
+                    <br>
+                    אבות טיפוס, דגמים וסדרות ייצור לתעשייה הרפואית, תעשיית הדפוס ועוד, וכן בייצור מבלטים ועבודות כבישה
+                    <br>
+                    תוך הקפדה על איכות גבוהה ומועדי אספקה קצרים במיוחד.
+                </p>
+            </div>
+            <div id="hero-sequence-loading" class="hero-sequence-loading" role="status" aria-live="polite">
+                <p>טוען את החוויה</p>
+                <div class="hero-sequence-progress" role="progressbar" aria-label="מסגרות תמונה שנטענו"
+                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <span id="hero-sequence-progress"></span>
+                </div>
+                <p id="hero-sequence-status">0%</p>
+            </div>
+        </div>
+    </section>
 
     <!--=================================
  banner -->
@@ -988,6 +1031,9 @@ Back to Top -->
             });
         })();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/hero-scroll-sequence.js"></script>
     <script src="https://cdn.enable.co.il/licenses/enable-L54730sgtgnsqoa3-0426-81182/init.js"></script>
 </body>
 
