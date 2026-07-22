@@ -20,3 +20,147 @@
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.2px;
 }
+
+/* Mobile language bar: desktop hidden, phones only (same as Hebrew site) */
+.mobile-lang-bar {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .topbar .list-inline-item:has(.lang-switch) {
+        display: none !important;
+    }
+
+    .mobile-lang-bar {
+        display: flex !important;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding: 8px 16px 10px;
+        background: #353535;
+        
+        border-bottom: 0;
+        position: relative;
+        z-index: 1000;
+        direction: ltr; /* keep the button on the physical right in both HE and EN */
+    }
+
+    .mobile-lang-bar .lang-switch {
+        display: inline-block;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+        padding: 5px 18px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 999px;
+        background: none;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mobile-lang-bar .lang-switch:hover {
+        background: var(--z-brand);
+        border-color: var(--z-brand);
+        color: #fff !important;
+    }
+
+    .section-title p {
+        font-size: 15.5px;
+    }
+
+    .tab.tab-bor {
+        padding: 18px 16px;
+    }
+
+    .tab.tab-bor .nav-tabs {
+        gap: 8px;
+    }
+
+    .tab.tab-bor .nav-tabs li a {
+        padding: 8px 16px !important;
+    }
+
+    .tab.tab-bor .nav-tabs li a span {
+        font-size: 14px;
+    }
+
+    .feature-box.text {
+        padding: 28px 22px 26px;
+    }
+
+    .waze-cta-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Footer: stack into centered, evenly spaced blocks */
+    .footer {
+        padding-top: 40px !important;
+        text-align: center;
+    }
+
+    .footer .row {
+        gap: 32px !important;
+    }
+
+    .footer .row > [class*="col-"] {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 420px !important;
+        margin-inline: auto;
+    }
+
+    .footer .footer-about,
+    .footer .footer-address {
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .footer #logo-footer {
+        margin-inline: auto;
+        display: block;
+    }
+
+    .footer .footer-about .mb-30 {
+        margin-bottom: 14px;
+    }
+
+    .footer .list-inline {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .footer .list-inline li {
+        margin: 5px 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px;
+    }
+
+    .footer .footer-address li > div {
+        justify-content: center !important;
+        gap: 6px;
+    }
+
+    .footer .footer-address li {
+        margin-bottom: 6px;
+    }
+
+    .footer form {
+        max-width: 100% !important;
+        margin-inline: auto;
+        text-align: start;
+    }
+
+    .footer form button {
+        align-self: stretch !important;
+        width: 100%;
+    }
+
+    .footer #form-status {
+        text-align: center;
+    }
+}

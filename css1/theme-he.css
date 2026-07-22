@@ -129,9 +129,9 @@ textarea:focus-visible {
     border-color: #fff !important;
 }
 
-/* Mobile language bar — sits under logo / hamburger row */
+/* Mobile language bar — sits under logo / hamburger row; desktop stays hidden */
 .mobile-lang-bar {
-    display: none;
+    display: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -898,7 +898,7 @@ body.hero-seq-playing #header {
     }
 
     .mobile-lang-bar {
-        display: flex;
+        display: flex !important;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
