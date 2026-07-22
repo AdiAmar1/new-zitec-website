@@ -1,0 +1,911 @@
+/* ==========================================================================
+   Zitec — Hebrew Site Theme (theme-he.css)
+   Modern industrial design-system overlay.
+   Load this file LAST so it refines the legacy template styles.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+    /* Brand (derived from the existing palette) */
+    --z-brand: #c90101;
+    --z-brand-strong: #a30000;
+    --z-brand-soft: #e84545;
+    --z-brand-tint: #fdf0f0;
+    --z-brand-glow: rgba(201, 1, 1, 0.32);
+
+    /* Neutrals */
+    --z-ink: #14181d;
+    --z-ink-2: #3a4149;
+    --z-muted: #5c6670;
+    --z-line: #e6e8ec;
+    --z-bg-soft: #f7f8fa;
+    --z-white: #ffffff;
+
+    /* On-dark surfaces */
+    --z-glass: rgba(12, 15, 20, 0.55);
+    --z-glass-line: rgba(255, 255, 255, 0.16);
+
+    /* Typography */
+    --z-font: "Heebo", "Poppins", "Open Sans", system-ui, sans-serif;
+
+    /* Shape & elevation */
+    --z-radius: 16px;
+    --z-radius-sm: 10px;
+    --z-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 6px rgba(16, 24, 40, 0.06);
+    --z-shadow-md: 0 10px 28px rgba(16, 24, 40, 0.12);
+    --z-shadow-lg: 0 24px 48px rgba(16, 24, 40, 0.18);
+
+    /* Motion */
+    --z-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & typography
+   -------------------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--z-font);
+    color: var(--z-ink-2);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--z-font);
+    color: var(--z-ink);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+::selection {
+    background: var(--z-brand);
+    color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--z-brand-glow);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. Topbar
+   -------------------------------------------------------------------------- */
+.topbar {
+    padding: 11px 0;
+    background: rgba(8, 10, 14, 0.35);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.topbar li,
+.topbar li a {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.topbar li a {
+    transition: color 0.25s var(--z-ease), opacity 0.25s var(--z-ease);
+}
+
+.topbar li a:hover {
+    opacity: 0.85;
+}
+
+/* Language switch pill */
+.topbar .lang-switch {
+    border-radius: 999px !important;
+    padding: 3px 16px !important;
+    font-weight: 500 !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transition: background-color 0.25s var(--z-ease), color 0.25s var(--z-ease),
+        border-color 0.25s var(--z-ease);
+}
+
+.topbar .lang-switch:hover {
+    background: #fff;
+    color: var(--z-ink) !important;
+    border-color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navigation (mega menu)
+   -------------------------------------------------------------------------- */
+.mega-menu .menu-links > li > a {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: color 0.25s var(--z-ease);
+}
+
+.mega-menu .menu-logo img {
+    height: 44px;
+    transition: transform 0.3s var(--z-ease);
+}
+
+.mega-menu .menu-logo a:hover img {
+    transform: scale(1.04);
+}
+
+/* Dropdown panel */
+.mega-menu .drop-down-multilevel {
+    background: #fff !important;
+    border: 1px solid var(--z-line) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--z-shadow-lg) !important;
+    padding: 8px !important;
+    overflow: hidden;
+}
+
+.mega-menu .drop-down-multilevel li a {
+    font-size: 14px !important;
+    font-weight: 500;
+    padding: 10px 16px !important;
+    border-radius: var(--z-radius-sm);
+    color: var(--z-ink-2) !important;
+    background: transparent !important;
+    transition: background-color 0.2s var(--z-ease), color 0.2s var(--z-ease),
+        padding 0.2s var(--z-ease);
+}
+
+.mega-menu .drop-down-multilevel li a:hover,
+.mega-menu .drop-down-multilevel li.active a {
+    background: var(--z-brand-tint) !important;
+    color: var(--z-brand) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Sections & titles
+   -------------------------------------------------------------------------- */
+.page-section-ptb {
+    padding-top: clamp(64px, 8vw, 104px);
+    padding-bottom: clamp(64px, 8vw, 104px);
+}
+
+/* Slightly wider content column (services.css caps it at 900px) */
+.page-section-ptb .container {
+    max-width: 1080px;
+}
+
+.section-title {
+    margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.section-title .title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--z-ink);
+    padding-bottom: 18px;
+}
+
+.text-white .section-title .title {
+    color: #fff;
+}
+
+/* Accent underline — gradient bar, centered under centered titles */
+.section-title h1.title:before,
+.section-title h2.title:before,
+.section-title h3.title:before,
+.section-title h4.title:before,
+.section-title h5.title:before,
+.section-title h6.title:before {
+    width: 56px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--z-brand), var(--z-brand-soft));
+    transition: width 0.35s var(--z-ease);
+}
+
+.text-center .section-title .title:before,
+.section-title.text-center .title:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section:hover .section-title .title:before {
+    width: 96px;
+}
+
+.section-title p {
+    padding: 0;
+    max-width: 780px;
+    margin: 16px auto 0;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--z-muted);
+}
+
+.text-white .section-title p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* --------------------------------------------------------------------------
+   6. Feature cards — "מה אנחנו מציעים?"
+   -------------------------------------------------------------------------- */
+.feature-box.text {
+    position: relative;
+    background: var(--z-white);
+    border: 1px solid var(--z-line);
+    border-radius: var(--z-radius);
+    padding: 34px 28px 30px;
+    margin-bottom: 30px;
+    height: calc(100% - 30px);
+    box-shadow: var(--z-shadow-sm);
+    transition: transform 0.35s var(--z-ease), box-shadow 0.35s var(--z-ease),
+        border-color 0.35s var(--z-ease);
+}
+
+/* Gradient accent revealed on hover */
+.feature-box.text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    border-radius: var(--z-radius) var(--z-radius) 0 0;
+    background: linear-gradient(90deg, var(--z-brand), var(--z-brand-soft));
+    opacity: 0;
+    transition: opacity 0.35s var(--z-ease);
+}
+
+.feature-box.text:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--z-shadow-md);
+    border-color: rgba(201, 1, 1, 0.25);
+}
+
+.feature-box.text:hover::before {
+    opacity: 1;
+}
+
+/* Numbered chip */
+.feature-box.text .title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--z-ink);
+    margin-bottom: 14px;
+}
+
+.feature-box.text span {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 46px;
+    padding: 0 10px;
+    background: var(--z-brand-tint);
+    color: var(--z-brand);
+    border-radius: 13px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    transition: background-color 0.35s var(--z-ease), color 0.35s var(--z-ease),
+        transform 0.35s var(--z-ease);
+}
+
+.feature-box.text:hover span {
+    background: var(--z-brand);
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.feature-box.text p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--z-muted);
+}
+
+/* --------------------------------------------------------------------------
+   7. Services tabs (dark section, index + services page)
+   -------------------------------------------------------------------------- */
+.tab.tab-bor {
+    display: block;
+    background: var(--z-glass);
+    border: 1px solid var(--z-glass-line);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: clamp(20px, 3.5vw, 36px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Pill tab navigation */
+.tab.tab-bor .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    margin: 0 0 30px !important;
+    padding: 0;
+    float: none;
+    width: 100%;
+}
+
+.tab.tab-bor .nav-tabs li {
+    width: auto !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.tab.tab-bor .nav-tabs li a {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 10px 20px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #eef1f4 !important;
+    font-weight: 500;
+    transition: background-color 0.25s var(--z-ease), border-color 0.25s var(--z-ease),
+        color 0.25s var(--z-ease), transform 0.25s var(--z-ease),
+        box-shadow 0.25s var(--z-ease);
+}
+
+.tab.tab-bor .nav-tabs li a span {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.tab.tab-bor .nav-tabs li a:hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+.tab.tab-bor .nav-tabs li a.active,
+.text-white .tab.tab-bor .nav-tabs li a.active {
+    background: var(--z-brand) !important;
+    border-color: var(--z-brand) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 22px var(--z-brand-glow);
+}
+
+/* Remove legacy underline / arrow indicators */
+.tab.tab-bor .nav-tabs li a::before,
+.tab.tab-bor .nav-tabs li a::after,
+.tab .nav-tabs li a.active::before {
+    content: none !important;
+}
+
+/* Tab content */
+.tab.tab-bor .tab-content {
+    padding: clamp(4px, 1.5vw, 12px) 4px 0;
+}
+
+.tab .tab-content .title {
+    position: relative;
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+}
+
+.tab .tab-content .title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline-start: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--z-brand), var(--z-brand-soft));
+}
+
+.tab .tab-content p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.tab .tab-content p strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Service image */
+.tab .tab-content .img-left {
+    float: inline-start;
+    margin: 0;
+    margin-inline-end: 28px;
+    margin-bottom: 16px;
+    max-width: min(420px, 46%);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: var(--z-shadow-md);
+    transition: transform 0.4s var(--z-ease), box-shadow 0.4s var(--z-ease);
+}
+
+.tab .tab-content .img-left:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--z-shadow-lg);
+}
+
+/* Checklist */
+.tab .tab-content .list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 10px;
+}
+
+.tab .tab-content .list li i {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    border-radius: 50%;
+    background: var(--z-brand-tint);
+    color: var(--z-brand);
+    font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Client logos
+   -------------------------------------------------------------------------- */
+.list-inline.clearfix {
+    gap: 8px;
+}
+
+.list-inline.clearfix li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    padding: 20px 28px;
+    background: var(--z-white);
+    border: 1px solid var(--z-line);
+    border-radius: var(--z-radius);
+    box-shadow: var(--z-shadow-sm);
+    transition: transform 0.3s var(--z-ease), box-shadow 0.3s var(--z-ease),
+        border-color 0.3s var(--z-ease);
+}
+
+.list-inline.clearfix li a:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--z-shadow-md);
+    border-color: rgba(201, 1, 1, 0.2);
+}
+
+.list-inline.clearfix li img {
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 0.3s var(--z-ease), opacity 0.3s var(--z-ease);
+}
+
+.list-inline.clearfix li a:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   9. Waze CTA strip
+   -------------------------------------------------------------------------- */
+.waze-cta {
+    background: var(--z-bg-soft);
+    border-top: 1px solid var(--z-line);
+    border-bottom: 1px solid var(--z-line);
+    padding: 38px 0;
+}
+
+.waze-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px 40px;
+}
+
+.waze-cta h4 {
+    font-size: clamp(19px, 2.5vw, 24px);
+    font-weight: 700;
+    color: var(--z-ink);
+    margin: 0;
+}
+
+.waze-btn {
+    background-color: #05c8e8;
+    color: #fff;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(5, 200, 232, 0.35);
+    transition: transform 0.2s var(--z-ease), background-color 0.25s var(--z-ease),
+        box-shadow 0.25s var(--z-ease);
+}
+
+.waze-btn:hover {
+    background-color: #00a9c7;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(5, 200, 232, 0.45);
+}
+
+.waze-btn:active {
+    transform: translateY(-1px);
+}
+
+.waze-btn img {
+    width: 26px;
+    height: 26px;
+}
+
+.waze-btn span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   10. Inner page hero (about / contact)
+   -------------------------------------------------------------------------- */
+.inner-intro {
+    height: auto !important;
+    padding: 175px 0 64px !important;
+    position: relative;
+}
+
+.inner-intro .section-title {
+    margin-bottom: 0;
+}
+
+.inner-intro .section-title .title {
+    color: #fff !important;
+    font-size: clamp(30px, 4.5vw, 42px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45) !important;
+}
+
+.inner-intro .section-title .title:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.inner-intro .section-title p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: clamp(15px, 2vw, 17px) !important;
+    max-width: 640px;
+    margin: 14px auto 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. About page content
+   -------------------------------------------------------------------------- */
+section.about .section-title p {
+    text-align: start;
+    max-width: 860px;
+    margin: 0 auto 22px;
+    font-size: 16.5px;
+    line-height: 2;
+    color: var(--z-ink-2);
+}
+
+section.about .about-image {
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    background: var(--z-white);
+    border: 1px solid var(--z-line);
+    border-radius: var(--z-radius);
+    box-shadow: var(--z-shadow-sm);
+    transition: transform 0.3s var(--z-ease), box-shadow 0.3s var(--z-ease);
+}
+
+section.about .about-image:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--z-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   12. Contact page
+   -------------------------------------------------------------------------- */
+.contact-info,
+.contact-form-wrapper {
+    background: var(--z-white);
+    border: 1px solid var(--z-line);
+    border-radius: var(--z-radius);
+    box-shadow: var(--z-shadow-sm);
+    padding: clamp(26px, 3vw, 38px);
+}
+
+.contact-info {
+    background: var(--z-bg-soft);
+}
+
+.contact-info-item {
+    border-bottom: 1px solid var(--z-line);
+    padding: 18px 0;
+}
+
+.contact-info-item .info-icon {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--z-brand), var(--z-brand-soft));
+    box-shadow: 0 6px 16px var(--z-brand-glow);
+    font-size: 18px;
+    transition: transform 0.3s var(--z-ease);
+}
+
+.contact-info-item:hover .info-icon {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.contact-info-item .info-content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--z-ink);
+}
+
+.contact-info-item .info-content p,
+.contact-info-item .info-content a {
+    font-size: 14px;
+    color: var(--z-muted);
+    transition: color 0.2s var(--z-ease);
+}
+
+.contact-info-item .info-content a:hover {
+    color: var(--z-brand) !important;
+}
+
+/* Main contact form (guard against the footer's generic `form` styles) */
+#contact-form-main {
+    max-width: 100%;
+}
+
+#contact-form-main label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--z-ink);
+    margin-bottom: 8px;
+}
+
+#contact-form-main .form-control {
+    padding: 12px 16px;
+    border: 1px solid var(--z-line);
+    border-radius: var(--z-radius-sm);
+    font-size: 15px;
+    background: var(--z-bg-soft);
+    transition: border-color 0.25s var(--z-ease), box-shadow 0.25s var(--z-ease),
+        background-color 0.25s var(--z-ease);
+}
+
+#contact-form-main .form-control:focus {
+    background: #fff;
+    border-color: var(--z-brand);
+    box-shadow: 0 0 0 4px rgba(201, 1, 1, 0.12);
+}
+
+.btn-contact {
+    background: linear-gradient(135deg, var(--z-brand), var(--z-brand-soft));
+    border-radius: var(--z-radius-sm);
+    padding: 13px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 18px var(--z-brand-glow);
+    transition: transform 0.25s var(--z-ease), box-shadow 0.25s var(--z-ease),
+        filter 0.25s var(--z-ease);
+}
+
+.btn-contact:hover {
+    background: linear-gradient(135deg, var(--z-brand-strong), var(--z-brand));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px var(--z-brand-glow);
+}
+
+.btn-contact:active {
+    transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   13. Footer
+   -------------------------------------------------------------------------- */
+.footer {
+    border-top: 3px solid var(--z-brand);
+    padding-top: 64px !important;
+    padding-bottom: 32px;
+}
+
+.footer .row {
+    justify-content: center;
+    gap: clamp(24px, 5vw, 64px) !important;
+}
+
+.footer .col-lg-3 {
+    max-width: 320px;
+}
+
+/* Restore readable footer typography (legacy CSS forces 10px) */
+.footer p,
+.footer li,
+.footer a,
+.footer label,
+.footer span {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+}
+
+.footer h4,
+.footer .title {
+    font-size: 16px !important;
+}
+
+.footer-about p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.footer a {
+    transition: color 0.2s var(--z-ease);
+}
+
+.footer a:hover,
+.footer a:hover span {
+    color: #ff6b64 !important;
+}
+
+.footer .footer-address i {
+    color: var(--z-brand-soft);
+}
+
+.footer .footer-address li {
+    margin-bottom: 10px;
+}
+
+/* Footer mini contact form (overrides inline <style> blocks in the pages) */
+.footer form label {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.footer form input,
+.footer form textarea {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: var(--z-radius-sm) !important;
+    padding: 11px 14px !important;
+    margin-top: 6px;
+    transition: border-color 0.25s var(--z-ease), box-shadow 0.25s var(--z-ease),
+        background-color 0.25s var(--z-ease) !important;
+}
+
+.footer form input:focus,
+.footer form textarea:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--z-brand-soft) !important;
+    box-shadow: 0 0 0 4px rgba(201, 1, 1, 0.22) !important;
+}
+
+.footer form button {
+    background: linear-gradient(135deg, var(--z-brand), var(--z-brand-soft)) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: var(--z-radius-sm) !important;
+    padding: 11px 28px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 6px 18px var(--z-brand-glow);
+    transition: transform 0.25s var(--z-ease), box-shadow 0.25s var(--z-ease) !important;
+}
+
+.footer form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px var(--z-brand-glow);
+}
+
+/* --------------------------------------------------------------------------
+   14. Back to top
+   -------------------------------------------------------------------------- */
+#back-to-top .top {
+    background: var(--z-brand) !important;
+    color: #fff !important;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px var(--z-brand-glow);
+    transition: transform 0.25s var(--z-ease), box-shadow 0.25s var(--z-ease),
+        background-color 0.25s var(--z-ease);
+}
+
+#back-to-top .top:hover {
+    background: var(--z-brand-strong) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px var(--z-brand-glow);
+}
+
+/* --------------------------------------------------------------------------
+   15. Responsive refinements
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .inner-intro {
+        padding: 150px 0 52px !important;
+    }
+
+    .tab .tab-content .img-left {
+        max-width: 100%;
+        float: none;
+        display: block;
+        margin: 0 auto 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title p {
+        font-size: 15.5px;
+    }
+
+    .tab.tab-bor {
+        padding: 18px 16px;
+    }
+
+    .tab.tab-bor .nav-tabs {
+        gap: 8px;
+    }
+
+    .tab.tab-bor .nav-tabs li a {
+        padding: 8px 16px !important;
+    }
+
+    .tab.tab-bor .nav-tabs li a span {
+        font-size: 14px;
+    }
+
+    .feature-box.text {
+        padding: 28px 22px 26px;
+    }
+
+    .waze-cta-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .row {
+        gap: 8px !important;
+    }
+
+    .footer .col-lg-3 {
+        max-width: 100%;
+    }
+}

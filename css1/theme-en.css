@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Zitec — English Site Theme (theme-en.css)
+   Reuses the shared design system defined in theme-he.css (all of its rules
+   are written with direction-agnostic logical properties, so they work for
+   LTR out of the box), plus a few English-specific refinements.
+   Load this file LAST so it refines the legacy template styles.
+   ========================================================================== */
+
+@import url("theme-he.css");
+
+/* --------------------------------------------------------------------------
+   English (LTR) refinements
+   -------------------------------------------------------------------------- */
+:root {
+    /* Poppins renders Latin text better; Heebo stays as a fallback */
+    --z-font: "Poppins", "Open Sans", "Heebo", system-ui, sans-serif;
+}
+
+/* Latin headings benefit from slightly tighter tracking */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.2px;
+}
