@@ -1,0 +1,101 @@
+/* About Page Styles */
+
+/* Hero Section */
+.inner-intro {
+  position: relative;
+  padding: 40px 0 35px;
+  margin-top: 0;
+}
+
+.inner-intro::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.inner-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Position footer icons on the right */
+.footer-address li {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+
+.footer-address li i {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Footer styling */
+.footer p,
+.footer li,
+.footer a,
+.footer label,
+.footer h4,
+.footer .title {
+  font-size: 10px;
+}
+
+.footer .row {
+  justify-content: center;
+  gap: 100px;
+}
+@media (max-width: 767px) {
+  .footer .row {
+    gap: 0;
+  }
+}
+.footer .col-lg-3 {
+  max-width: 300px;
+}
+
+.page-section-pt {
+  padding-top: 50px;
+}
+
+/* Make dropdown menu items smaller */
+.mega-menu .drop-down-multilevel li a {
+  font-size: 13px !important;
+  padding: 8px 15px !important;
+}
+
+/* Client logos styling */
+.list-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.list-inline li {
+  margin: 15px;
+}
+
+.list-inline li img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .inner-intro {
+    padding: 25px 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner-intro .section-title .title {
+    font-size: 32px;
+  }
+}

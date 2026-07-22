@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Zitec Services" />
+    <meta name="description" content="Zitec - השירותים שלנו" />
+    <meta name="author" content="Zitec" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Zitec - השירותים שלנו</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images1/zitec/ZITEC-Z.png" />
+
+    <!-- Google Fonts - Poppins and Open Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="../css1/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- mega menu -->
+    <link href="../css1/mega-menu/mega_menu.css" rel="stylesheet" type="text/css" />
+
+    <!-- font awesome -->
+    <link href="../css1/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Flaticon -->
+    <link href="../css1/flaticon.css" rel="stylesheet" type="text/css" />
+
+    <!-- owl-carousel -->
+    <link href="../css1/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+
+    <!-- General style -->
+    <link href="../css1/general.css" rel="stylesheet" type="text/css" />
+
+    <!-- main style -->
+    <link href="../css1/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- services page style -->
+    <link href="../css1/services.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .lighter-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.182);
+            pointer-events: none;
+        }
+
+        /* Center client logos */
+        .list-inline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .list-inline li {
+            margin: 15px;
+        }
+
+        .list-inline li img {
+            max-width: 150px;
+            height: auto;
+            /* width: 200px */
+        }
+
+        /* Center footer content and add spacing */
+
+
+        .footer .col-lg-3 {
+            max-width: 300px;
+        }
+
+        /* Make menu text 17px */
+        /* .mega-menu .menu-links > li > a {
+            font-size: 17px !important;
+        } */
+
+        /* Position footer icons on the right */
+        .footer-address li {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+        }
+
+        .footer-address li i {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--=================================
+header -->
+
+    <header id="header" class="clean">
+        <div class="topbar dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="topbar-right text-end">
+                            <ul class="list-inline" style="justify-content: flex-start; margin-bottom: 0;">
+                                <li class="list-inline-item">
+                                    <a href="tel:03-5589014" style="color: inherit; text-decoration: none;">
+                                        <i class="fa fa-phone" style="margin-left: 10px;"></i>03-5589014
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="topbar-left text-start">
+                            <ul class="list-inline" style="justify-content: flex-end; margin-bottom: 0;">
+                                <li class="list-inline-item">
+                                    <a href="mailto:Info@zitec.co.il" style="color: inherit; text-decoration: none;">
+                                        <i class="fa fa-envelope-o" style="margin-left: 10px;"></i>
+                                        Info@zitec.co.il
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--=================================
+mega menu -->
+
+        <div class="menu">
+            <!-- menu start -->
+            <nav id="menu" class="mega-menu">
+                <!-- menu list items container -->
+                <section class="menu-list-items">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 position-relative">
+                                <!-- menu logo -->
+                                <ul class="menu-logo">
+                                    <li><a href="../index.html"><img id="logo_dark_img"
+                                                src="../images1/zitec/ZITEC-NEW.png" alt="logo"></a></li>
+                                </ul>
+                                <!-- menu links -->
+                                <ul class="menu-links">
+                                    <!-- active class -->
+                                    <li><a href="../index.html"> דף הבית</a>
+
+                                    </li>
+                                    <li class="active"><a href="./services.html"> שירותים <i
+                                                class="fa fa-angle-down fa-indicator"></i></a>
+                                        <!-- drop down multilevel  -->
+                                        <ul class="drop-down-multilevel left-menu">
+                                            <li><a href="./services.html?tab=hituch-lazer"> חיתוך בלייזר</a></li>
+                                            <li><a href="./services.html?tab=kifuf"> כיפוף</a></li>
+                                            <li><a href="./services.html?tab=kirsum"> כרסום צורתי</a></li>
+                                            <li><a href="./services.html?tab=ibued-shvavi"> עיבוד שבבי</a></li>
+                                            <li><a href="./services.html?tab=litush"> ליטוש</a></li>
+                                            <li><a href="./services.html?tab=nikuv"> ניקוב</a></li>
+                                            <li><a href="./services.html?tab=kshihim"> קשיחים</a></li>
+                                            <li><a href="./services.html?tab=mivlatanut"> מבלטנות</a></li>
+                                            <li><a href="./services.html?tab=rituch"> ריתוך</a></li>
+                                            <li><a href="./services.html?tab=additional"> שירותים נוספים</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="../docs/iso.pdf" target="_blank"> תעודת הסמכה </a>
+                                        <!-- drop down full width -->
+
+                                    </li>
+                                    <li><a href="./about.html"> אודות החברה</a>
+                                        <!-- drop down multilevel  -->
+
+                                    </li>
+
+                                    <li><a href="./contact.html">צרו איתנו קשר</a>
+                                        <!-- drop down multilevel  -->
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </nav>
+            <!-- menu end -->
+        </div>
+    </header>
+    <!--=================================
+ header -->
+
+    <!--=================================
+ Services Section -->
+
+    <section class="page-section-ptb dark-bg bg fixed text-white gradient-overlay lighter-bg"
+        style="background-image:url(../images1/menWelding.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title text-center">
+                        <h2 class="title">השירותים שלנו</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-sm-12" style="display: flex; justify-content: center;">
+                    <div class="tab tab-bor clearfix" style="width: 100%;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+                            <li class="nav-item"><a class="nav-link active" href="#home3" data-bs-toggle="tab"
+                                    aria-expanded="true"><span>חיתוך
+                                        בלייזר</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#profile3" data-bs-toggle="tab"
+                                    aria-expanded="false"><span>כיפוף</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#messages3" data-bs-toggle="tab"><span>כרסום
+                                        צורתי</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings3" data-bs-toggle="tab"><span>עיבוד
+                                        שבבי</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design3"
+                                    data-bs-toggle="tab"><span>ליטוש</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design4"
+                                    data-bs-toggle="tab"><span>ניקוב</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design5"
+                                    data-bs-toggle="tab"><span>קשיחים</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design6"
+                                    data-bs-toggle="tab"><span>מבלטנות</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design7"
+                                    data-bs-toggle="tab"><span>ריתוך</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#design8" data-bs-toggle="tab"><span>שירותים
+                                        נוספים</span></a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home3">
+                                <img class="img-fluid img-left" src="../images1/zitec/חיתוך-בלייזר-1.jpg" alt=""
+                                    id="img">
+                                <h3 class="title">חיתוך בלייזר</h3>
+                                <p><strong>לרשותינו מכונת חיתוך בלייזר מתוצרת amada.</strong><br></p>
+                                <p>ניתן לחתוך חומרי גלם שונים</p>
+                                <p></p>
+                                <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i>אלומיניום עד 6 מ"מ עובי</li>
+                                    <li><i class="fa fa-check"></i>נירוסטה עד 6 מ"מ עובי</li>
+                                    <li><i class="fa fa-check"></i>ברזל עד 6 מ"מ עובי</li>
+                                    <!-- <li><i class="fa fa-check"></i></li> -->
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade " id="profile3">
+                                <img class="img-fluid img-left" src="../images1/zitec/כיפוף.jpg" alt="" id="img">
+                                <h3 class="title">כיפוף</h3>
+                                <p><strong>לרשותינו מחלקת כיפוף הכוללת 3 מכונות כיפוף מתוצרת amada באורך של עד 2.5
+                                        מטר.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> There are many variations of passages of Lorem Ipsum
+                                        available.</li>
+                                    <li><i class="fa fa-check"></i> If you are going to use a passage of Lorem Ipsum,
+                                        you need.</li>
+                                    <li><i class="fa fa-check"></i> Tempora incidunt ut labore et dolore magnam aliquam
+                                        quaerat.</li>
+                                    <li><i class="fa fa-check"></i> Labore et dolore magnam aliquam quaerat voluptatem.
+                                    </li>
+                                </ul> -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="messages3">
+                                <img class="img-fluid img-left" src="../images1/zitec/כרסום-צורתי.jpg" alt="" id="img">
+                                <h3 class="title">כרסום צורתי</h3>
+                                <p><strong>לרשותינו מכונות מהמתקדמות בתעשייה: gravograph IS-900</strong><br></p>
+                                <p>אנו מתמחים בייצור פנלים לענף האלקטרוניקה, פנלים למעליות ושלטים שונים.<br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> standard dummy text ever since the 1500s,
+                                        consectetur.</li>
+                                    <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia.
+                                    </li>
+                                    <li><i class="fa fa-check"></i> Non numquam eius modi tempora incidunt ut labore et.
+                                    </li>
+                                    <li><i class="fa fa-check"></i> These cases are perfectly simple and easy to
+                                        distinguish.</li>
+                                </ul> -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="settings3">
+                                <img class="img-fluid img-left" src="../images1/zitec/עיבוד שבבי.jpg" alt="" id="img">
+                                <h3 class="title">עיבוד שבבי</h3>
+                                <p><strong></strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> The wise man therefore always holds in these
+                                        matters.</li>
+                                    <li><i class="fa fa-check"></i> Itaque earum rerum hic tenetur a sapiente delectus,
+                                        reiciendis.</li>
+                                    <li><i class="fa fa-check"></i> To take a trivial example, which of us ever
+                                        undertakes.</li>
+                                    <li><i class="fa fa-check"></i> It is pleasure, but because those who do not know
+                                        how.</li>
+                                </ul> -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design3">
+                                <img class="img-fluid img-left" src="../images1/zitec/ליטוש-1.jpg" alt="" id="img">
+                                <h3 class="title">ליטוש</h3>
+                                <p><strong>מחלקת ליטוש דואגת למראה נקי ואחיד, כך שמתקבלת תוצאה של מחיקת כל סימני
+                                        העיבוד.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia
+                                        dolor.</li>
+                                    <li><i class="fa fa-check"></i> Exercitationem ullam corporis suscipit laboriosam.
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design4">
+                                <img class="img-fluid img-left" src="../images1/zitec/ניקוב-1.jpg" alt="" id="img">
+                                <h3 class="title">ניקוב</h3>
+                                <p><strong>לרשותינו מחלקת ניקוב הכוללת 3 מכונות ניקוב מתוצרת amada באורך של עד 2.5
+                                        מטר.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design5">
+                                <img class="img-fluid img-left" src="../images1/zitec/קשיחים.jpg" alt="" id="img">
+                                <h3 class="title">קשיחים</h3>
+                                <p><strong>לרשותינו מלאי קשיחים רחב ומגוון מאוד מכל הסוגים. לרבות pem southco
+                                        bollhoff.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia
+                                        dolor.</li>
+                                    <li><i class="fa fa-check"></i> Exercitationem ullam corporis suscipit laboriosam.
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design6">
+                                <img class="img-fluid img-left" src="../images1/zitec/מבלטנות.jpg" alt="" id="img">
+                                <h3 class="title">מבלטנות</h3>
+                                <p><strong>אנו מתמחים בייצור מבלטים שונים למוצרים "בעייתיים" בעלי דרישות גבוהות
+                                        במיוחד.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia
+                                        dolor.</li>
+                                    <li><i class="fa fa-check"></i> Exercitationem ullam corporis suscipit laboriosam.
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design7">
+                                <img class="img-fluid img-left" src="../images1/zitec/ריתוך.png" alt="" id="img">
+                                <h3 class="title">ריתוך</h3>
+                                <p><strong>מחלקת ריתוך רחבה הנותנת פתרונות ריתוך למגוון רחב מאוד של חומרים שונים תוך
+                                        שימוש בשיטות ריתוך שונות הכוללות ארגון TiG mIG רתוך נקודה
+                                        אלומיניום.</strong><br></p>
+                                <p><br></p>
+                                <p></p>
+                                <!-- <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> Neque porro quisquam est, qui dolorem ipsum quia
+                                        dolor.</li>
+                                    <li><i class="fa fa-check"></i> Exercitationem ullam corporis suscipit laboriosam.
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="design8">
+                                <!-- <img class="img-fluid img-left" src="../images1/zitec/ZITEC-NEW.png" alt="" id="imgLogo"> -->
+                                <h3 class="title">שירותים נוספים</h3>
+                                <!-- <p><strong>לרשותינו מלאי קשיחים רחב ומגוון מאוד מכל הסוגים. לרבות pem southco bollhoff.</strong><br></p>
+                                <p><br></p>
+                                <p></p> -->
+                                <ul class="list list-unstyled">
+                                    <li><i class="fa fa-check"></i> אינגרייב/חריצה, סימון בלייזר – מתבצע במתקן החברה.
+                                    </li>
+                                    <li><i class="fa fa-check"></i> תהלכי ציפויים, צביעה, והדפסות – מבוצעים בקבלנות
+                                        משנה.</li>
+                                    <li><i class="fa fa-check"></i> תחזוקה – מכונות החברה מטופלות ומתוחזקות ברמה הגבוהה
+                                        ביותר.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--=================================
+ Services Section End -->
+
+    <!--=================================
+footer -->
+
+    <footer class="footer footer-2 dark-bg bg fixed bg-overlay-black-80 page-section-pt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
+                    <div class="footer-about">
+                        <span class="mb-30 d-block"><img id="logo-footer" src="../images1/zitec/zitecLogo.png"
+                                width="180" alt="logo"></span>
+                        <p>חברת Zitec - זיווד וטכנולוגיות בע"מ היא מפעל המתמחה
+                            בייצור זיווד אלקטרוני, אבות טיפוס, דגמים
+                            וסדרות ייצור לתעשייה הרפואית, תעשיית הדפוס ועוד, וכן בייצור מבלטים ועבודות כבישה.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
+                    <div class="footer-about">
+
+                        <div class="footer-address mt-20" style="width: 100%; display: flex; flex-direction: column; align-items:flex-start;">
+                            <ul class="list-inline">
+                                <li style="width: 100%; display: flex; flex-direction: column; align-items:flex-start;">
+                                    <div style="display: flex; flex-direction: row; align-items:flex-start; justify-content:center;">
+                                        <span >לחץ כאן לפתיחה במפה</span>
+                                        <i class="fa fa-angle-down fa-indicator" style="color: rgb(171, 171, 171);"></i>
+                                    </div>
+                                    <div style="margin-top: 0px;">
+                                        <a href="https://maps.google.com/?q=הסדנא+16,+חולון" target="_blank"
+                                            style="color: inherit; text-decoration: none;">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span>משרדי Zitec- הסדנא 16, חולון</span>
+
+                                        </a>
+                                    </div>
+                                </li>
+                                <li
+                                    style="width: 100%; display: flex; flex-direction: row-reverse; justify-content: flex-end;">
+                                    <i class="fa fa-phone"></i>
+                                    <a href="tel:03-5589014" style="color: inherit; text-decoration: none;">
+                                        <span> טלפון: 03-5589014</span>
+                                    </a>
+                                </li>
+                                <li
+                                    style="width: 100%; display: flex; flex-direction: row-reverse; justify-content: flex-end;">
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="mailto:Info@zitec.co.il" style="color: inherit; text-decoration: none;">
+                                        <span> דוא"ל: Info@zitec.co.il </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-sm-0">
+                    <form action="https://formspree.io/f/xnngkegy" method="POST" id="contact-form">
+                        <label>
+                            האימייל שלך:
+                            <input type="email" name="email" placeholder="name@example.com" required>
+                        </label>
+                        <label>
+                            ההודעה שלך:
+                            <textarea name="message" placeholder="כתוב/י כאן את הודעתך..." required></textarea>
+                        </label>
+                        <button type="submit">שליחה</button>
+                        <p id="form-status" aria-live="polite"></p>
+                    </form>
+
+                    <style>
+                        form {
+                            direction: rtl;
+                            text-align: right;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                            width: 100%;
+                            max-width: 280px;
+                            font-family: 'Heebo', 'Poppins', 'Open Sans', sans-serif;
+                        }
+
+                        form label {
+                            color: #fff;
+                            font-size: 14px;
+                        }
+
+                        form input,
+                        form textarea {
+                            width: 100%;
+                            background: transparent;
+                            border: 1px solid #fff;
+                            color: #fff;
+                            padding: 8px 10px;
+                            border-radius: 4px;
+                            outline: none;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                        }
+
+                        form input::placeholder,
+                        form textarea::placeholder {
+                            color: rgba(255, 255, 255, 0.7);
+                        }
+
+                        form input:focus,
+                        form textarea:focus {
+                            border-color: #e40000;
+                            box-shadow: 0 0 5px rgba(228, 0, 0, 0.5);
+                        }
+
+                        form textarea {
+                            min-height: 100px;
+                            resize: vertical;
+                        }
+
+                        form button {
+                            background-color: transparent;
+                            color: #fff;
+                            border: 1px solid #e40000;
+                            padding: 8px 20px;
+                            cursor: pointer;
+                            font-size: 14px;
+                            border-radius: 4px;
+                            transition: all 0.3s ease;
+                            align-self: flex-start;
+                        }
+
+                        form button:hover {
+                            background-color: #e40000;
+                            color: #000;
+                        }
+
+                        #form-status {
+                            font-size: 13px;
+                            color: #fff;
+                            margin-top: 4px;
+                        }
+                    </style>
+
+                    <script>
+                        const form = document.getElementById('contact-form');
+                        const statusEl = document.getElementById('form-status');
+
+                        form.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            statusEl.textContent = 'שולח...';
+                            try {
+                                const res = await fetch(form.action, {
+                                    method: 'POST',
+                                    body: new FormData(form),
+                                    headers: { 'Accept': 'application/json' }
+                                });
+                                if (res.ok) {
+                                    form.reset();
+                                    statusEl.textContent = 'ההודעה נשלחה! נחזור אליך בהקדם.';
+                                } else {
+                                    statusEl.textContent = 'משהו השתבש. נסה שוב מאוחר יותר.';
+                                }
+                            } catch {
+                                statusEl.textContent = 'תקלה בחיבור. נסה שוב.';
+                            }
+                        });
+                    </script>
+                </div>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+    <!--=================================
+footer -->
+
+    <!--=================================
+Back to Top -->
+
+    <div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+
+    <!--=================================
+ jquery -->
+
+
+    <!-- jquery  -->
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!-- popper.min -->
+    <script type="text/javascript" src="../js/popper.min.js"></script>
+
+    <!-- Menu -->
+    <script type="text/javascript" src="../js/mega-menu/mega_menu.js"></script>
+
+    <!-- appear -->
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+
+    <!-- counter -->
+    <script type="text/javascript" src="../js/counter/jquery.countTo.js"></script>
+
+    <!-- owl-carousel -->
+    <script type="text/javascript" src="../js/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- custom -->
+    <script type="text/javascript" src="../js/custom.js"></script>
+
+    <script>
+        // Map URL slugs -> tab pane IDs
+        const TAB_MAP = {
+            "hituch-lazer": "home3",        // חיתוך בלייזר
+            "kifuf": "profile3",            // כיפוף
+            "kirsum": "messages3",          // כרסום צורתי
+            "ibued-shvavi": "settings3",    // עיבוד שבבי
+            "litush": "design3",            // ליטוש
+            "nikuv": "design4",             // ניקוב
+            "kshihim": "design5",           // קשיחים
+            "mivlatanut": "design6",        // מבלטנות
+            "rituch": "design7",            // ריתוך
+            "additional": "design8"         // שירותים נוספים
+        };
+
+        (function activateServiceTab() {
+            const params = new URLSearchParams(window.location.search);
+            let key = params.get("tab");
+
+            // Fallback: also support direct hash like services.html#profile3
+            if (!key && window.location.hash) {
+                const hashId = window.location.hash.slice(1); // e.g., 'profile3'
+                if (document.getElementById(hashId)) {
+                    showTab(hashId);
+                    return;
+                }
+            }
+
+            if (!key) return; // nothing to do; keep default active
+
+            const tabId = TAB_MAP[key];
+            if (!tabId) return;
+
+            showTab(tabId);
+        })();
+
+        function showTab(tabId) {
+            // Find the corresponding tab trigger by its href
+            const trigger = document.querySelector(`.nav-tabs a[href="#${CSS.escape(tabId)}"]`);
+            if (!trigger) return;
+
+            // If using Bootstrap 5, ensure bootstrap.Tab is available
+            // Prefer programmatic show for consistent behavior
+            try {
+                const tab = new bootstrap.Tab(trigger);
+                tab.show();
+            } catch {
+                // Fallback: click the trigger
+                trigger.click();
+            }
+
+            // Optional: scroll the tabs into view after navigation
+            const section = document.querySelector(".page-section-ptb");
+            if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    </script>
+<script src="https://cdn.enable.co.il/licenses/enable-L54730sgtgnsqoa3-0426-81182/init.js"></script>
+
+</body>
+
+</html>

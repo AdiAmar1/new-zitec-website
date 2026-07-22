@@ -1,0 +1,45 @@
+/* About Page Styles */
+
+/* Position footer icons on the right */
+.footer-address li {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+.footer-address li i {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* Make all footer text smaller */
+.footer p,
+.footer li,
+.footer a,
+.footer label,
+.footer h4,
+.footer .title {
+    font-size: 10px;
+}
+
+/* Footer styling */
+.footer .row {
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer .col-lg-3 {
+    max-width: 300px;
+}
+
+/* Menu text size */
+.mega-menu .menu-links > li > a {
+    font-size: 17px !important;
+}
+
+/* Make dropdown menu items smaller */
+.mega-menu .drop-down-multilevel li a {
+    font-size: 13px !important;
+    padding: 8px 15px !important;
+}
+

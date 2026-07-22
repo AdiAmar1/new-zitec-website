@@ -1,0 +1,72 @@
+/* Services Page Styles */
+
+/* Add space below header to prevent overlap with navigation */
+body {
+    top: 0;
+}
+
+/* Services section specific styles */
+.services-section {
+    min-height: 600px;
+}
+
+.page-section-ptb {
+    padding-bottom: 100px;
+  }
+
+/* Lighter background overlay */
+.lighter-bg::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.182);
+    pointer-events: none;
+}
+
+/* Tab styling adjustments */
+.tab .nav-tabs {
+    margin-bottom: 30px;
+}
+
+/* Footer styling */
+.footer .row {
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer .col-lg-3 {
+    max-width: 300px;
+}
+
+/* Make all footer text smaller by 3px */
+.footer p,
+.footer li,
+.footer a,
+.footer label,
+.footer h4,
+.footer .title {
+    font-size:10px;
+}
+
+/* Menu text size */
+
+
+/* .menu{
+    margin-top: 100px !important;
+}
+.page-section-ptb .container{
+    margin-top: 100px !important;
+} */
+
+/* Make services section container narrower */
+.page-section-ptb .container {
+    max-width: 900px;
+}
+
+.page-section-pt{
+    padding-top: 50px;
+    
+}
