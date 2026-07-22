@@ -4188,7 +4188,7 @@ textarea {
 }
 
 .feature-box.text .title {
-  margin-left: 100px;
+  margin-left: 0;
   margin-top: 0;
   font-weight: 500;
   font-size: 20px;
@@ -4597,8 +4597,13 @@ textarea {
 }
 
 .tab .tab-content p {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.tab .tab-content p strong {
+  font-weight: 400;
 }
 
 .tab .tab-content .list li {
