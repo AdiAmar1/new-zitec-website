@@ -293,6 +293,9 @@ banner -->
             font-weight: 300;
             font-size: clamp(30px, 5.5vw, 73px);
             line-height: 1.1;
+            text-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.75),
+                0 0 24px rgba(0, 0, 0, 0.55);
         }
 
         .hero-seq-title span {
@@ -307,6 +310,9 @@ banner -->
             font-size: clamp(14px, 1.6vw, 20px);
             line-height: 1.6;
             max-width: 900px;
+            text-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.8),
+                0 0 16px rgba(0, 0, 0, 0.5);
         }
 
         .hero-sequence-loading {
@@ -341,6 +347,12 @@ banner -->
             height: 2px;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.2);
+        }
+        .hero-seq-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: rgba(69, 69, 69, 0.185);
         }
 
         .hero-sequence-progress span {

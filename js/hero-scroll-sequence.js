@@ -354,7 +354,7 @@
     }
 
     function initNativeFallback() {
-        section.style.height = "220vh";
+        section.style.height = "400vh";
         stage.style.position = "sticky";
         stage.style.top = "0";
         stage.style.height = "100vh";
@@ -393,7 +393,7 @@
                 scrollTrigger: {
                     trigger: section,
                     start: "top top",
-                    end: () => "+=" + Math.max(innerHeight * 1.2, 900),
+                    end: () => "+=" + Math.max(innerHeight * 1.35, 110),
                     pin: true,
                     scrub: 0.45,
                     anticipatePin: 1,
