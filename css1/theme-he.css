@@ -901,11 +901,73 @@ section.about .about-image:hover {
         text-align: center;
     }
 
-    .footer .row {
-        gap: 8px !important;
+    /* Footer: stack into centered, evenly spaced blocks */
+    .footer {
+        padding-top: 40px !important;
+        text-align: center;
     }
 
-    .footer .col-lg-3 {
-        max-width: 100%;
+    .footer .row {
+        gap: 32px !important;
+    }
+
+    .footer .row > [class*="col-"] {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 420px !important;
+        margin-inline: auto;
+    }
+
+    .footer .footer-about,
+    .footer .footer-address {
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .footer #logo-footer {
+        margin-inline: auto;
+        display: block;
+    }
+
+    .footer .footer-about .mb-30 {
+        margin-bottom: 14px;
+    }
+
+    .footer .list-inline {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .footer .list-inline li {
+        margin: 5px 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px;
+    }
+
+    .footer .footer-address li > div {
+        justify-content: center !important;
+        gap: 6px;
+    }
+
+    .footer .footer-address li {
+        margin-bottom: 6px;
+    }
+
+    .footer form {
+        max-width: 100% !important;
+        margin-inline: auto;
+        text-align: start;
+    }
+
+    .footer form button {
+        align-self: stretch !important;
+        width: 100%;
+    }
+
+    .footer #form-status {
+        text-align: center;
     }
 }

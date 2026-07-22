@@ -243,7 +243,7 @@ banner -->
         .hero-seq {
             position: relative;
             width: 100%;
-            background: #050505;
+            /* background: #050505; */
         }
 
         .hero-seq-stage {
@@ -369,6 +369,19 @@ banner -->
             }
         }
 
+        /* On phones the 16:9 frames crop badly, so show a static hero instead */
+        @media (max-width: 767px) {
+            .hero-seq-stage {
+                height: 70vh;
+                min-height: 420px;
+                background: #e9dbdb69 url('./images/menWelding.jpg') center / cover no-repeat;
+            }
+
+            .hero-sequence-canvas,
+            .hero-sequence-loading {
+                display: none;
+            }
+        }
         /* Lighten header area for logo visibility */
         header#header {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);

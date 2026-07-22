@@ -253,6 +253,13 @@
 
     if (!section || !stage || !canvas || !loading || !progressBar || !status) return;
 
+    // Phones show a static CSS background instead (see the hero media query),
+    // so skip frame preloading and scroll pinning entirely.
+    if (matchMedia("(max-width: 767px)").matches) {
+        loading.setAttribute("aria-hidden", "true");
+        return;
+    }
+
     const context = canvas.getContext("2d", { alpha: false });
     const progressTrack = progressBar.parentElement;
     const images = new Array(FRAME_SOURCES.length);
