@@ -129,6 +129,11 @@ textarea:focus-visible {
     border-color: #fff !important;
 }
 
+/* Mobile language bar — sits under logo / hamburger row */
+.mobile-lang-bar {
+    display: none;
+}
+
 /* --------------------------------------------------------------------------
    4. Navigation (mega menu)
    -------------------------------------------------------------------------- */
@@ -887,6 +892,45 @@ body.hero-seq-playing #header {
 }
 
 @media (max-width: 767px) {
+    /* Keep language switch under the logo/menu bar, not in the dark topbar */
+    .topbar .list-inline-item:has(.lang-switch) {
+        display: none !important;
+    }
+
+    .mobile-lang-bar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding: 8px 16px 10px;
+        background: #353535;
+        
+        border-bottom: 0;
+        position: relative;
+        z-index: 1000;
+        direction: ltr; /* keep the button on the physical right in both HE and EN */
+    }
+
+    .mobile-lang-bar .lang-switch {
+        display: inline-block;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+        padding: 5px 18px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 999px;
+        background: none;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mobile-lang-bar .lang-switch:hover {
+        background: var(--z-brand);
+        border-color: var(--z-brand);
+        color: #fff !important;
+    }
+
     .section-title p {
         font-size: 15.5px;
     }

@@ -232,6 +232,9 @@ header -->
             </nav>
             <!-- menu end -->
         </div>
+        <div class="mobile-lang-bar">
+            <a href="./en/index.html" class="lang-switch" aria-label="Switch language to English">English</a>
+        </div>
     </header>
 
     <!--=================================
@@ -308,7 +311,7 @@ banner -->
             font-weight: 600;
             color: #fff;
             font-family: 'Poppins', 'Open Sans', sans-serif;
-            font-size: clamp(18px, 1.6vw, 20px);
+            font-size: 20px;
             line-height: 1.6;
             max-width: 900px;
             text-shadow:
@@ -350,12 +353,13 @@ banner -->
             overflow: hidden;
             background: rgba(255, 255, 255, 0.2);
         }
-        .hero-seq-overlay {
+        /* .hero-seq-overlay {
             position: absolute;
             inset: 0;
-            z-index: 3;
-            background: rgba(255, 255, 255, 0.073);
-        }
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.648);
+            pointer-events: none;
+        } */
 
         .hero-sequence-progress span {
             display: block;
@@ -376,13 +380,45 @@ banner -->
             .hero-seq-stage {
                 height: 70vh;
                 min-height: 420px;
-                background: #e9dbdb69 url('./images/menWelding.jpg') center / cover no-repeat;
+                background-color: #1a1a1a;
+                background-image: url("./images1/weldingPicture.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .hero-seq-mobile-bg {
+                display: block;
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            /* Light wash over the photo to brighten it */
+            .hero-seq-overlay {
+                display: block !important;
+                background: rgba(255, 255, 255, 0.189);
+            }
+
+            .hero-seq-text {
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 1.5;
+                max-width: 92%;
             }
 
             .hero-sequence-canvas,
             .hero-sequence-loading {
-                display: none;
+                display: none !important;
             }
+        }
+
+        .hero-seq-mobile-bg {
+            display: none;
         }
         /* Lighten header area for logo visibility */
         header#header {
@@ -391,6 +427,7 @@ banner -->
     </style>
     <section class="hero-seq" id="hero-sequence" aria-label="אנימציית פתיחה הנשלטת בגלילה">
         <div class="hero-seq-stage">
+            <img class="hero-seq-mobile-bg" src="images/weldingPicture.jpg" alt="" aria-hidden="true" decoding="async">
             <canvas id="hero-sequence-canvas" class="hero-sequence-canvas" width="1280" height="720" role="img"
                 aria-label="אנימציית ייצור הנשלטת באמצעות גלילה"></canvas>
             <div class="hero-seq-overlay" aria-hidden="true"></div>
