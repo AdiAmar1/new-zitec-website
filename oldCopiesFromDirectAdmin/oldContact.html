@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Zitec Services" />
-    <meta name="description" content="Zitec - השירותים שלנו" />
+    <meta name="keywords" content="Zitec Contact" />
+<title>זיטק - צרו קשר | זיווד וטכנולוגיות בע"מ</title>
+    <meta name="description" content="צרו קשר עם חברת זיטק (Zitec) בחולון - מומחים בזיווד אלקטרוני, חיתוך בלייזר ועיבוד שבבי. זמינים בטלפון 03-5589014 או במשרדינו ברחוב הסדנא 16." />
     <meta name="author" content="Zitec" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Zitec- אודות החברה</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../images1/zitec/ZITEC-Z.png" />
 
-    <!-- Google Fonts - Heebo, Poppins and Open Sans -->
+    <!-- Google Fonts - Poppins and Open Sans -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
     <!-- bootstrap -->
@@ -39,27 +39,112 @@
     <!-- main style -->
     <link href="../css1/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- services page style -->
-    <link href="../css1/services.css" rel="stylesheet" type="text/css" />
-
-    <!-- about page style -->
-    <link href="../css1/about.css" rel="stylesheet" type="text/css" />
-
+    <!-- contact page style -->
+    <link href="../css1/contact.css" rel="stylesheet" type="text/css" />
 
     <style>
+        /* Center footer content and add spacing */
+        .footer .row {
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .footer .col-lg-3 {
+            max-width: 300px;
+        }
+
         #logo-footer {
             filter: brightness(0) invert(1);
         }
+
+        /* Center footer content and add spacing */
+        .footer .row {
+            justify-content: center;
+            gap: 100px;
+        }
+
+        @media (max-width: 767px) {
+            .footer .row {
+                gap: 0;
+            }
+        }
+
+        .footer .col-lg-3 {
+            max-width: 300px;
+        }
+
+        .footer p,
+        .footer li,
+        .footer a,
+        .footer label,
+        .footer h4,
+        .footer .title {
+            font-size: 10px;
+        }
+
+        /* Position footer icons on the right */
+        .footer-address li {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+        }
+
+        .footer-address li i {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+
+        /* Make dropdown menu items smaller */
+        .mega-menu .drop-down-multilevel li a {
+            font-size: 13px !important;
+            padding: 8px 15px !important;
+        }
+
+        .waze-btn {
+            background-color: #05C8E8;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+        }
+
+        .waze-btn:hover {
+            background-color: #009ec2;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.626);
+            color: #fff;
+        }
+
+        .waze-btn:active {
+            transform: translateY(0);
+        }
+
+        .waze-btn svg {
+            display: inline-block;
+        }
+
+        #contact-form-main .form-control {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        #contact-form-main .row>[class*="col-"] {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
     </style>
 
-    <!-- Hebrew theme - modern design system (must load last) -->
-    <link href="../css1/theme-he.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-
-    <!--=================================
- preloader -->
 
     <!--=================================
 header -->
@@ -72,16 +157,10 @@ header -->
                         <div class="topbar-right text-end">
                             <ul class="list-inline" style="justify-content: flex-start; margin-bottom: 0;">
                                 <li class="list-inline-item">
-                                    <a href="../en/pages/about.html" class="lang-switch"
-                                        style="color: inherit; text-decoration: none; font-weight: 300; padding: 2px 10px; border: 1px solid rgba(255,255,255,0.45); border-radius: 4px; margin-inline-start: 8px;"
-                                        aria-label="Switch language to English">English</a>
-                                </li>
-                                <li class="list-inline-item">
                                     <a href="tel:03-5589014" style="color: inherit; text-decoration: none;">
                                         <i class="fa fa-phone" style="margin-left: 10px;"></i>03-5589014
                                     </a>
                                 </li>
-                                
 
                             </ul>
                         </div>
@@ -144,12 +223,12 @@ mega menu -->
                                         <!-- drop down full width -->
 
                                     </li>
-                                    <li class="active"><a href="./about.html"> אודות החברה</a>
+                                    <li><a href="./about.html"> אודות החברה</a>
                                         <!-- drop down multilevel  -->
 
                                     </li>
 
-                                    <li><a href="./contact.html">צרו איתנו קשר</a>
+                                    <li class="active"><a href="./contact.html">צרו איתנו קשר</a>
                                         <!-- drop down multilevel  -->
 
                                     </li>
@@ -165,119 +244,168 @@ mega menu -->
     </header>
 
     <!--=================================
- header -->
-
+header end -->
 
     <!--=================================
- banner -->
+Contact Page Hero -->
+
 
     <section class="inner-intro bg bg-fixed bg-overlay-black-50"
-        style="background-image:url(../images1/zitec/backgroundNew.png);">
+        style="background-image:url(../images1/zitec/backgroundNew.png); height: 170px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <div class="section-title">
-                        <h2 class="title">אודות החברה</h2>
-                        <p>מובילים בישראל בתחום הזיווד האלקטרוני ופיתוח אבות טיפוס מאז שנת 2000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--=================================
- banner -->
-
-
-    <!--=================================
- Page Section -->
-
-    <section class="about page-section-ptb">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title text-center">
-                        <!-- <h2 class="title">אודות החברה</h2> -->
-                        <p>חברת Zitec – זיווד וטכנולוגיות בע"מ הוקמה בשנת 2000, והיא מובילה בישראל בתחום הזיווד
-                            האלקטרוני, פיתוח אבות טיפוס, ייצור דגמים וסדרות ייצור לתעשיות הביטחוניות, הרפואיות
-                            והאזרחיות. החברה פועלת במקצועיות ובחדשנות הנדסית גבוהה, תוך הקפדה על איכות בלתי מתפשרת,
-                            עמידה בלוחות זמנים קצרים במיוחד ומתן פתרונות מקיפים המותאמים אישית לכל לקוח. </p>
-                        <p>Zitec מוסמכת לתקן האיכות הבינלאומי ISO 9001:2015 ומעסיקה צוות מיומן של כ־45 עובדים בתחומי
-                            ההנדסה, הייצור, בקרת האיכות והניהול. לאורך שנות פעילותה, החברה ביססה את מעמדה כספקית אמינה
-                            ומוערכת של גופים מובילים במשק, ביניהם: משרד הביטחון, משרד ראש הממשלה, הוועדה לאנרגיה אטומית,
-                            חטיבות אלביט, אורבוטק, נובמיל, HP, אירונאוטיקס, אסטרונאוטיקס, לנדא, רותם, דגש ועוד רבים
-                            אחרים.</p>
-                        <p>החברה פועלת בטכנולוגיות מתקדמות בעולם עיבוד המתכת, ומחזיקה בציוד חדשני הכולל מכונות חיתוך
-                            בלייזר פייבר מדויקות במיוחד (עד עובי 25 מ"מ), מכונות כיפוף וניקוב, ריתוך של כלל סוגי
-                            החומרים, ליטוש, נעיצת קשיחים, מחלקת מבלטים, כרסום ועיבוד שבבי תלת־צירי. בנוסף, Zitec מספקת
-                            תמיכה הנדסית מלאה בשלבי התכנון והפיתוח, ליווי בייצור אבות טיפוס ופתרונות מותאמים לדרישות
-                            מיוחדות.</p>
-                        <p>במפעל נעשה שימוש במגוון רחב של חומרי גלם איכותיים כגון טיטניום, נחושת, פליז, אלומיניום,
-                            נירוסטה, פלדה, פוספור ברונזה, גלס אפוקסי, פוליקרבונט ומיילרים. לצד שירותי הייצור, החברה
-                            מבצעת גם חריטה, סימון בלייזר, תהליכי ציפוי, צבע והדפסות – כולם ברמת גימור גבוהה ובפיקוח
-                            קפדני.</p>
-                        <p>מאז הקמתה, Zitec מתמחה בשילוב בין דיוק הנדסי, חדשנות טכנולוגית ושירות אישי, תוך שמירה על ערכי
-                            אמינות, מקצועיות ומצוינות. בזכות הידע, הציוד והניסיון הרב שנצבר לאורך השנים, החברה ממשיכה
-                            להוות שותף אסטרטגי לחברות מהמובילות במשק הישראלי, ולהוביל את תחום הזיווד והעיבוד המתכתי
-                            בישראל.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="justify-content: center; ">
-                <div class="col-md-2">
-                    <div class="about">
-                        <div class="about-image clearfix"><img class="img-fluid" src="../images1/ISO_9001-2015.svg.png"
-                                alt="תקן ISO 9001:2015">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="about">
-                        <div class="about-image clearfix"><img class="img-fluid" src="../images1/mati.png"
-                                alt="מתן">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <section class="page-section-ptb pattern-overlay pattern-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <div class="section-title">
-                        <h2 class="title">הלקוחות שלנו</h2>
-                        <p>אנו מספקים שירות לחברות גדולות ומובילות במשק, ובין לקוחותינו נמנים: משרד הביטחון, משרד ראש
-                            הממשלה, ד.צ 2470, סורק הוועדה לאנרגיה אטומית, כל חטיבות אלביט, (מלט, כלי טיס אלאופ וכו'..)
-                            אורבוטק, מתן, נובטק, נובמיל, שימקוטק, HP, אירונאוטיקס, אסטרונאוטיקס, לנדא, רותם, דגש ועוד.
+                        <h2 class="title"
+                            style="color: #fff; font-size: 36px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 10px;">
+                            צרו איתנו קשר</h2>
+                        <p
+                            style="color: #fff; font-size: 16px; margin-top: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+                            נשמח לענות על כל שאלה ולסייע לכם במציאת הפתרון המושלם לצרכים שלכם
                         </p>
                     </div>
                 </div>
-                <ul class="list-inline clearfix">
-                    
-                    <li><a href="#"><img class="img-fluid center-block" src="../images1/novatech.png" alt="נובטק"></a>
-                    </li>
-                    <li><a href="#"><img class="img-fluid center-block" src="../images1/orbotec-300x200.png" alt="אורבוטק"></a>
-                    </li>
-                    <li><a href="#"><img class="img-fluid center-block" style="max-width: 100px;" src="../images1/HP.png"
-                                alt="HP"></a>
-                    </li>
-                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="contact-section page-section-ptb white-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <!-- Contact Info -->
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <div class="contact-info">
+
+
+                                <div class="contact-info-item mb-4">
+                                    <div class="info-icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="info-content" >
+                                        <h5>כתובת</h5>
+                                        <p style="display: flex; flex-direction: column; align-items: center;">
+                                            <span style="margin-right: -40px;">לחץ כאן לפתיחה במפה</span>
+                
+                                            <a href="https://maps.google.com/?q=הסדנא+16,+חולון" target="_blank"
+                                                style="color: inherit; text-decoration: none; ">
+                                                משרדי Zitec - הסדנא 16, חולון
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item mb-4">
+                                    <div class="info-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h5>טלפון</h5>
+                                        <p>
+                                            <a href="tel:03-5589014"
+                                                style="color: inherit; text-decoration: none;">03-5589014</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item mb-4">
+                                    <div class="info-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h5>דואר אלקטרוני</h5>
+                                        <p>
+                                            <a href="mailto:Info@zitec.co.il"
+                                                style="color: inherit; text-decoration: none;">
+                                                Info@zitec.co.il
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="info-icon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h5>שעות פעילות</h5>
+                                        <p>א'-ה': 08:00 - 17:00<br>
+                                            יום ו': 08:00 - 13:00</p>
+                                    </div>
+                                </div>
+                                <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+                                    <a id="wazeFooterBtn"
+                                        href="https://waze.com/ul?q=%D7%94%D7%A1%D7%93%D7%A0%D7%90%2016%2C%20%D7%97%D7%95%D7%9C%D7%95%D7%9F&navigate=yes"
+                                        target="_blank" rel="noopener" class="waze-btn" aria-label="נווט עם Waze">
+                                        <!-- Waze icon (inline SVG so it always loads) -->
+                                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                            <path
+                                                d="M17.3 3.6c3.3 0 5.7 2.5 5.7 5.8 0 3.3-2.4 6.5-6.1 6.5-.5 0-1 0-1.6-.1-.3 1.3-1.5 2.3-2.9 2.3-.9 0-1.7-.4-2.2-1-.6.6-1.5 1-2.4 1-.9 0-1.7-.3-2.3-.9l-.1-.1-.2.1c-.5.2-1.1.4-1.8.4-.4 0-.7-.3-.7-.7 0-.3.2-.6.5-.7.6-.1 1.1-.2 1.5-.4.2-.1.4-.2.6-.3-.3-.7-.5-1.4-.5-2.2 0-4.3 3.4-7.6 7.6-7.6h1.4Zm-.1 1.5h-1.3c-3.4 0-6.2 2.7-6.2 6.1 0 .7.1 1.4.4 2 .2.4.1.9-.3 1.2l-.1.1c-.2.2-.5.3-.7.5.3.1.6.2 1 .2.4 0 .8-.2 1.1-.5.3-.4.9-.4 1.3-.1.3.3.7.5 1.1.5.9 0 1.6-.7 1.6-1.6 0-.4.3-.8.8-.8.7.1 1.2.1 1.7.1 2.8 0 4.6-2.2 4.6-5 0-2.5-1.9-4.3-4.6-4.3ZM9 10.3c.4 0 .8.3.8.8s-.4.8-.8.8a.8.8 0 0 1 0-1.6Zm4 0c.4 0 .8.3.8.8s-.4.8-.8.8a.8.8 0 0 1 0-1.6Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <span>נווט עם Waze</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="col-lg-6">
+                            <div class="contact-form-wrapper">
+                                <div class="section-title mb-4">
+                                    <h3 class="title">שלחו לנו הודעה</h3>
+                                    <p style="padding: 0;">מלאו את הטופס ונחזור אליכם בהקדם האפשרי</p>
+                                </div>
+
+                                <form action="https://formspree.io/f/xnngkegy" method="POST" id="contact-form-main">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>שם מלא *</label>
+                                            <input type="text" name="name" class="form-control" placeholder="השם שלך"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>אימייל *</label>
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="name@example.com" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>טלפון</label>
+                                            <input type="tel" name="phone" class="form-control"
+                                                placeholder="050-1234567">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>נושא</label>
+                                            <input type="text" name="subject" class="form-control"
+                                                placeholder="נושא ההודעה">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label>הודעה *</label>
+                                        <textarea name="message" class="form-control" rows="4"
+                                            placeholder="כתוב/י כאן את הודעתך..." required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn-contact">שלח הודעה</button>
+                                    <p id="form-status-main" aria-live="polite"></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!--=================================
- page-section -->
-
-
-
+Contact Form Section End -->
 
     <!--=================================
 footer -->
@@ -287,8 +415,8 @@ footer -->
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
                     <div class="footer-about">
-                        <span class="mb-30 d-block"><img id="logo-footer" src="../images1/zitec/zitecLogo.png" width="180"
-                                alt="logo"></span>
+                        <span class="mb-30 d-block"><img id="logo-footer" src="../images1/zitec/zitecLogo.png"
+                                width="180" alt="logo"></span>
                         <p>חברת Zitec - זיווד וטכנולוגיות בע"מ היא מפעל המתמחה
                             בייצור זיווד אלקטרוני, אבות טיפוס, דגמים
                             וסדרות ייצור לתעשייה הרפואית, תעשיית הדפוס ועוד, וכן בייצור מבלטים ועבודות כבישה.</p>
@@ -298,6 +426,7 @@ footer -->
 
                 <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
                     <div class="footer-about">
+
                         <div class="footer-address mt-20" style="width: 100%; display: flex; flex-direction: column; align-items:flex-start;">
                             <ul class="list-inline">
                                 <li style="width: 100%; display: flex; flex-direction: column; align-items:flex-start;">
@@ -442,6 +571,28 @@ footer -->
                             }
                         });
                     </script>
+                    <script>
+                        (function () {
+                            const btn = document.getElementById('wazeFooterBtn');
+                            if (!btn) return;
+
+                            // Destination (Hebrew) – feel free to change to an exact business name if you prefer
+                            const destination = 'הסדנא 16, חולון';
+
+                            // Build Waze URL (search by query). You can also switch to lat/lon when you have coordinates:
+                            // const url = 'https://waze.com/ul?ll=31.9669,34.8124&navigate=yes';
+                            // היה קודם: https://waze.com/ul?q=...&navigate=yes
+                            const url = 'https://www.waze.com/he/live-map/directions/%D7%96%D7%99%D7%98%D7%A7-%D7%96%D7%99%D7%95%D7%95%D7%93-%D7%95%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA-%D7%91%D7%A2%D7%9E-%D7%94%D7%A1%D7%93%D7%A0%D7%90-16-%D7%97%D7%95%D7%9C%D7%95%D7%9F?to=place.w.22806848.228068482.233273';
+
+
+                            // Ensure clean open in a new tab/window and prevent double navigation if href is present
+                            btn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                window.open(url, '_blank', 'noopener');
+                            });
+                        })();
+                    </script>
+
                 </div>
 
             </div>
@@ -449,8 +600,12 @@ footer -->
 
 
     </footer>
+
     <!--=================================
 footer -->
+
+    <!--=================================
+Back to Top -->
 
     <div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-chevron-up"></i></a></div>
 
@@ -461,32 +616,56 @@ footer -->
     <!-- jquery  -->
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 
-    <!-- popper.min -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
-
     <!-- bootstrap -->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
-    <!-- appear -->
-    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <!-- popper.min -->
+    <script type="text/javascript" src="../js/popper.min.js"></script>
 
     <!-- Menu -->
     <script type="text/javascript" src="../js/mega-menu/mega_menu.js"></script>
 
-    <!-- owl-carousel -->
-    <script type="text/javascript" src="../js/owl-carousel/owl.carousel.min.js"></script>
+    <!-- appear -->
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
 
     <!-- counter -->
     <script type="text/javascript" src="../js/counter/jquery.countTo.js"></script>
 
-    <!-- counter -->
-    <script type="text/javascript" src="../js/jquery.vide.js"></script>
-
-    <!-- skills -->
-    <script type="text/javascript" src="../js/skills-graph/jqbar.js"></script>
+    <!-- owl-carousel -->
+    <script type="text/javascript" src="../js/owl-carousel/owl.carousel.min.js"></script>
 
     <!-- custom -->
     <script type="text/javascript" src="../js/custom.js"></script>
+
+    <!-- Contact Form Script -->
+    <script>
+        const mainForm = document.getElementById('contact-form-main');
+        const mainStatusEl = document.getElementById('form-status-main');
+
+        mainForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            mainStatusEl.textContent = 'שולח...';
+            mainStatusEl.style.color = '#333';
+            try {
+                const res = await fetch(mainForm.action, {
+                    method: 'POST',
+                    body: new FormData(mainForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    mainForm.reset();
+                    mainStatusEl.textContent = 'ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.';
+                    mainStatusEl.style.color = '#28a745';
+                } else {
+                    mainStatusEl.textContent = 'משהו השתבש. אנא נסה שוב מאוחר יותר.';
+                    mainStatusEl.style.color = '#dc3545';
+                }
+            } catch {
+                mainStatusEl.textContent = 'תקלה בחיבור. אנא נסה שוב.';
+                mainStatusEl.style.color = '#dc3545';
+            }
+        });
+    </script>
 <script src="https://cdn.enable.co.il/licenses/enable-L54730sgtgnsqoa3-0426-81182/init.js"></script>
 
 </body>

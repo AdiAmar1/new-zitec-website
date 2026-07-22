@@ -740,6 +740,21 @@ section.about .about-image:hover {
     transform: translateY(-1px);
 }
 
+/* Smooth sticky-header hide / reveal around the homepage scroll-sequence */
+#header {
+    transition:
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.6s;
+}
+
+body.hero-seq-playing #header {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-100%) !important;
+}
+
 /* --------------------------------------------------------------------------
    13. Footer
    -------------------------------------------------------------------------- */

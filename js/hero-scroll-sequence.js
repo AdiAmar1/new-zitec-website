@@ -360,6 +360,43 @@
         })));
     }
 
+    let headerRevealTimer = null;
+
+    function setHeaderDuringSequence(active) {
+        clearTimeout(headerRevealTimer);
+        const header = document.getElementById("header");
+
+        if (active) {
+            // Hide immediately when the sequence starts or is in progress.
+            document.body.classList.add("hero-seq-playing");
+            if (header && window.gsap) {
+                window.gsap.killTweensOf(header);
+            }
+            return;
+        }
+
+        // Wait a beat after the sequence ends, then ease the menu back in.
+        headerRevealTimer = setTimeout(() => {
+            document.body.classList.remove("hero-seq-playing");
+
+            if (header && window.gsap) {
+                window.gsap.fromTo(
+                    header,
+                    { autoAlpha: 0, y: -28 },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.65,
+                        ease: "power2.out",
+                        clearProps: "opacity,visibility,transform"
+                    }
+                );
+            }
+
+            headerRevealTimer = null;
+        }, 10);
+    }
+
     function initNativeFallback() {
         section.style.height = "400vh";
         stage.style.position = "sticky";
@@ -372,6 +409,8 @@
             const scrollProgress = Math.max(0, Math.min(1, -rect.top / distance));
             playhead.frame = scrollProgress * (images.length - 1);
             setFrame(playhead.frame);
+            // Hide the sticky menu while the sequence is still playing.
+            setHeaderDuringSequence(scrollProgress > 0 && scrollProgress < 1);
         };
 
         addEventListener("scroll", onScroll, { passive: true });
@@ -404,7 +443,8 @@
                     pin: true,
                     scrub: 0.45,
                     anticipatePin: 1,
-                    invalidateOnRefresh: true
+                    invalidateOnRefresh: true,
+                    onToggle: (self) => setHeaderDuringSequence(self.isActive)
                 }
             });
 
