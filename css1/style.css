@@ -72,7 +72,7 @@ Design and Developed by: potenzaglobalsolutions.com
 }
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
-  cursor: url(../images/close.png) 25 25, pointer;
+  cursor: url(../images1/close.png) 25 25, pointer;
 }
 
 /*---------------------------------------------------------------------
@@ -858,7 +858,7 @@ ul.page-breadcrumb li a:hover {
   Footer
 ---------------------------------------------------------------------*/
 .footer {
-  background: url(../images/pattern/pattern2.jpg) no-repeat 0 0;
+  background: url(../images1/pattern/pattern2.jpg) no-repeat 0 0;
   color: #c5c5c5;
 }
 .footer .title {
@@ -1103,7 +1103,7 @@ ul.footer-instagram-images li {
   z-index: -1;
 }
 .our-sercive1:before {
-  background: url(../images/element/02.png) no-repeat 0 0;
+  background: url(../images1/element/02.png) no-repeat 0 0;
   background-size: cover;
   left: -70px;
   top: 130px;
@@ -1111,7 +1111,7 @@ ul.footer-instagram-images li {
   height: 236px;
 }
 .our-sercive1:after {
-  background: url(../images/element/03.png) no-repeat 0 0;
+  background: url(../images1/element/03.png) no-repeat 0 0;
   background-size: cover;
   right: -60px;
   top: 50px;

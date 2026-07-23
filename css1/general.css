@@ -965,7 +965,7 @@ Page section margin padding
   left: 0;
   top: 0;
   z-index: -1;
-  background: url(../images/bg/gradient-overlay.png) repeat-y left 0;
+  background: url(../images1/bg/gradient-overlay.png) repeat-y left 0;
 }
 
 /*************************
@@ -981,7 +981,7 @@ Page section margin padding
 }
 
 .pattern-overlay:before {
-  background-image: url(../images/pattern/pattern1.png);
+  background-image: url(../images1/pattern/pattern1.png);
   background-repeat: repeat;
   content: "";
   height: 100%;
@@ -993,19 +993,19 @@ Page section margin padding
 }
 
 .pattern-2:before {
-  background-image: url(../images/pattern/pattern2.jpg);
+  background-image: url(../images1/pattern/pattern2.jpg);
 }
 
 .pattern-3:before {
-  background-image: url(../images/pattern/pattern3.png);
+  background-image: url(../images1/pattern/pattern3.png);
 }
 
 .pattern-4:before {
-  background-image: url(../images/pattern/pattern4.png);
+  background-image: url(../images1/pattern/pattern4.png);
 }
 
 .pattern-5:before {
-  background-image: url(../images/pattern/pattern5.jpg);
+  background-image: url(../images1/pattern/pattern5.jpg);
 }
 
 /*************************
@@ -1346,7 +1346,7 @@ Page section margin padding
 .bg-effect:before {
   content: "";
   background-color: #f9f9f9;
-  background-image: url(../images/pattern/pattern3.png);
+  background-image: url(../images1/pattern/pattern3.png);
   width: 100%;
   height: 70%;
   left: 0;
