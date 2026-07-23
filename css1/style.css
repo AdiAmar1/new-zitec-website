@@ -1976,6 +1976,8 @@ hr {
     position: absolute;
     top: 100%;
     width: 100%;
+    /* Hide until hamburger opens it — prevents flash of open menu on load */
+    display: none;
   }
 
   /* Fancy Header */

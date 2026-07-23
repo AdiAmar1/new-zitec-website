@@ -155,6 +155,8 @@
   .mega-menu .menu-links {
     width: 100%;
     background: #fff;
+    /* Hide until JS/hamburger opens it — prevents flash of open menu on load */
+    display: none;
   }
 }
 @media screen and (min-width: 992px) {

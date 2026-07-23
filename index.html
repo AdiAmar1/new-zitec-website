@@ -22,7 +22,7 @@
     <link href="css1/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- mega menu -->
-    <link href="css1/mega-menu/mega_menu.css" rel="stylesheet" type="text/css" />
+    <link href="css1/mega-menu/mega_menu.css?v=20260723" rel="stylesheet" type="text/css" />
 
     <!-- font awesome -->
     <link href="css1/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -242,189 +242,185 @@ header -->
 
     <!--=================================
 banner -->
-    <style type="text/css">
-        .hero-seq {
-            position: relative;
-            width: 100%;
-            /* background: #050505; */
-        }
+<style type="text/css">
+    .hero-seq {
+        position: relative;
+        width: 100%;
+        /* background: #050505; */
+    }
 
-        .hero-seq-stage {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 480px;
-            overflow: hidden;
-            background: #050505;
-        }
+    .hero-seq-stage {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 480px;
+        overflow: hidden;
+        background: #050505;
+    }
 
-        .hero-sequence-canvas {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            display: block;
-            width: 100%;
-            height: 100%;
-            /* filter: brightness(1.3) contrast(0.95);
-            -webkit-filter: brightness(1.3) contrast(0.95); */
-        }
+    .hero-sequence-canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        filter: brightness(1.3) contrast(0.95);
+        -webkit-filter: brightness(1.3) contrast(0.95);
+    }
 
-        /* .hero-seq-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 3;
-            background: rgba(255, 54, 54, 0.525);
-        } */
+    .hero-seq-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: rgba(69, 69, 69, 0.185);
+        pointer-events: none;
+    }
 
-        .hero-seq-content {
-            position: absolute;
-            inset: 0;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 20px 36px;
-            text-align: center;
-            pointer-events: none;
-        }
+    .hero-seq-content {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px 36px;
+        text-align: center;
+        pointer-events: none;
+    }
 
-        .hero-seq-title {
-            margin: 0;
-            color: #fff;
-            font-family: 'Poppins', 'Open Sans', sans-serif;
-            font-weight: 300;
-            font-size: clamp(30px, 5.5vw, 73px);
-            line-height: 1.1;
-            text-shadow:
-                0 2px 8px rgba(0, 0, 0, 0.75),
-                0 0 24px rgba(0, 0, 0, 0.55);
-        }
+    .hero-seq-title {
+        margin: 0;
+        color: #fff;
+        font-family: 'Poppins', 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: clamp(30px, 5.5vw, 73px);
+        line-height: 1.1;
+        text-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.75),
+            0 0 24px rgba(0, 0, 0, 0.55);
+    }
 
-        .hero-seq-title span {
-            color: #c90400;
-            font-weight: 600;
-        }
+    .hero-seq-title span {
+        color: #c90400;
+        font-weight: 600;
+    }
 
-        .hero-seq-text {
-            margin: 0;
-            font-weight: 600;
-            color: #fff;
-            font-family: 'Poppins', 'Open Sans', sans-serif;
-            font-size: 20px;
-            line-height: 1.6;
-            max-width: 900px;
-            text-shadow:
-                0 0 4px rgba(0, 0, 0, 0.95),
-                0 0 8px rgba(0, 0, 0, 0.9),
-                0 2px 8px rgba(0, 0, 0, 0.85);
-        }
+    .hero-seq-text {
+        margin: 0;
+        font-weight: 600;
+        color: #fff;
+        font-family: 'Poppins', 'Open Sans', sans-serif;
+        font-size: 20px;
+        line-height: 1.6;
+        max-width: 900px;
+        text-shadow:
+            0 0 4px rgba(0, 0, 0, 0.95),
+            0 0 10px rgba(0, 0, 0, 0.9),
+            0 2px 8px rgba(0, 0, 0, 0.85);
+    }
 
+    .hero-sequence-loading {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        display: grid;
+        place-content: center;
+        gap: 12px;
+        padding: 24px;
+        color: #fff;
+        text-align: center;
+        background: radial-gradient(circle at center, rgba(35, 35, 35, 0.96), rgba(5, 5, 5, 0.98) 58%);
+        transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
+
+    .hero-sequence-loading[aria-hidden="true"] {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .hero-sequence-loading p {
+        margin: 0;
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .hero-sequence-progress {
+        width: min(300px, 70vw);
+        height: 2px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-sequence-progress span {
+        display: block;
+        width: 0;
+        height: 100%;
+        background: #fff;
+        transition: width 0.12s linear;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
         .hero-sequence-loading {
-            position: absolute;
-            inset: 0;
-            z-index: 10;
-            display: grid;
-            place-content: center;
-            gap: 12px;
-            padding: 24px;
-            color: #fff;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(35, 35, 35, 0.96), rgba(5, 5, 5, 0.98) 58%);
-            transition: opacity 0.45s ease, visibility 0.45s ease;
+            transition: none;
         }
+    }
 
-        .hero-sequence-loading[aria-hidden="true"] {
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .hero-sequence-loading p {
-            margin: 0;
-            font-size: 13px;
-            font-variant-numeric: tabular-nums;
-            letter-spacing: 0.12em;
-        }
-
-        .hero-sequence-progress {
-            width: min(300px, 70vw);
-            height: 2px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        /* .hero-seq-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.648);
-            pointer-events: none;
-        } */
-
-        .hero-sequence-progress span {
-            display: block;
-            width: 0;
-            height: 100%;
-            background: #fff;
-            transition: width 0.12s linear;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .hero-sequence-loading {
-                transition: none;
-            }
-        }
-
-        /* On phones the 16:9 frames crop badly, so show a static hero instead */
-        @media (max-width: 767px) {
-            .hero-seq-stage {
-                height: 70vh;
-                min-height: 420px;
-                background-color: #1a1a1a;
-                background-image: url("./images1/weldingPicture.jpg");
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-
-            .hero-seq-mobile-bg {
-                display: block;
-                position: absolute;
-                inset: 0;
-                z-index: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-
-            /* Light wash over the photo to brighten it */
-            .hero-seq-overlay {
-                display: block !important;
-                background: rgba(255, 255, 255, 0.189);
-            }
-
-            .hero-seq-text {
-                font-weight: 300;
-                font-size: 13px;
-                line-height: 1.5;
-                max-width: 92%;
-            }
-
-            .hero-sequence-canvas,
-            .hero-sequence-loading {
-                display: none !important;
-            }
+    /* On phones the 16:9 frames crop badly, so show a static hero instead */
+    @media (max-width: 767px) {
+        .hero-seq-stage {
+            height: 70vh;
+            min-height: 420px;
+            background-color: #1a1a1a;
+            background-image: url("./images1/weldingPicture.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .hero-seq-mobile-bg {
-            display: none;
+            display: block;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
-        /* Lighten header area for logo visibility */
-        header#header {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+
+        /* Light wash over the photo to brighten it */
+        .hero-seq-overlay {
+            display: block !important;
+            background: rgba(255, 255, 255, 0.272);
         }
-    </style>
+
+        .hero-seq-text {
+            font-weight: 300;
+            font-size: 13px;
+            line-height: 1.5;
+            max-width: 92%;
+        }
+
+        .hero-sequence-canvas,
+        .hero-sequence-loading {
+            display: none !important;
+        }
+    }
+
+    .hero-seq-mobile-bg {
+        display: none;
+    }
+
+    /* Lighten header area for logo visibility */
+    header#header {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+</style>
     <section class="hero-seq" id="hero-sequence" aria-label="אנימציית פתיחה הנשלטת בגלילה">
         <div class="hero-seq-stage">
             <img class="hero-seq-mobile-bg" src="./images1/weldingPicture.jpg" alt="" aria-hidden="true" decoding="async">
@@ -486,7 +482,7 @@ banner -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="feature-box text mb-0">
+                    <div class="feature-box text mb-0 pb-5">
                         <h4 class="title"><span>03.</span>שירותים נוספים</h4>
                         <p>אינגרייב/חריצה, סימון בלייזר – מתבצע במתקן החברה.
                             תהלכי ציפויים, צביעה, והדפסות – מבוצעים בקבלנות משנה.
