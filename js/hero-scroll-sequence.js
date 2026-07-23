@@ -30,7 +30,7 @@
     const context = canvas.getContext("2d", { alpha: false });
     const progressTrack = progressBar.parentElement;
     const images = new Array(FRAME_SOURCES.length);
-    const playhead = { frame: 0 };
+    const playhead = { frame: FRAME_COUNT - 1 };
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let loadedCount = 0;
     let lastRenderedFrame = -1;
@@ -106,16 +106,17 @@
     function preloadFrames() {
         // Load in small batches so remote visitors get progress feedback
         // and weak connections are not flooded with hundreds of requests.
+        // Start from the end so the reversed sequence's first visible frame paints early.
         const concurrency = 6;
-        let nextIndex = 0;
+        let nextIndex = FRAME_SOURCES.length - 1;
 
         return new Promise((resolve) => {
             let active = 0;
 
             const kick = () => {
-                while (active < concurrency && nextIndex < FRAME_SOURCES.length) {
+                while (active < concurrency && nextIndex >= 0) {
                     const index = nextIndex;
-                    nextIndex += 1;
+                    nextIndex -= 1;
                     active += 1;
 
                     const image = new Image();
@@ -124,9 +125,9 @@
                         loadedCount += 1;
                         updateLoading();
 
-                        if (index === 0 && loaded) {
+                        if (index === FRAME_COUNT - 1 && loaded) {
                             resizeCanvas();
-                            renderFrame(0, true);
+                            renderFrame(FRAME_COUNT - 1, true);
                         }
 
                         active -= 1;
@@ -195,7 +196,7 @@
             const rect = section.getBoundingClientRect();
             const distance = Math.max(1, section.offsetHeight - innerHeight);
             const scrollProgress = Math.max(0, Math.min(1, -rect.top / distance));
-            playhead.frame = scrollProgress * (images.length - 1);
+            playhead.frame = (1 - scrollProgress) * (images.length - 1);
             setFrame(playhead.frame);
             // Hide the sticky menu while the sequence is still playing.
             setHeaderDuringSequence(scrollProgress > 0 && scrollProgress < 1);
@@ -211,7 +212,7 @@
         resizeCanvas();
 
         if (reducedMotion) {
-            setFrame(0);
+            setFrame(images.length - 1);
             return;
         }
 
@@ -220,7 +221,7 @@
         if (gsapReady && window.ScrollTrigger) {
             window.gsap.registerPlugin(window.ScrollTrigger);
             window.gsap.to(playhead, {
-                frame: images.length - 1,
+                frame: 0,
                 ease: "none",
                 snap: { frame: 1 },
                 onUpdate: () => setFrame(playhead.frame),
@@ -265,6 +266,6 @@
             status.textContent = "Animation unavailable";
             loading.setAttribute("aria-hidden", "true");
             section.classList.add("is-ready");
-            renderFrame(0, true);
+            renderFrame(FRAME_COUNT - 1, true);
         });
 })();

@@ -96,16 +96,17 @@ const improvedPreload = `
     function preloadFrames() {
         // Load in small batches so remote visitors get progress feedback
         // and weak connections are not flooded with hundreds of requests.
+        // Start from the end so the reversed sequence's first visible frame paints early.
         const concurrency = 6;
-        let nextIndex = 0;
+        let nextIndex = FRAME_SOURCES.length - 1;
 
         return new Promise((resolve) => {
             let active = 0;
 
             const kick = () => {
-                while (active < concurrency && nextIndex < FRAME_SOURCES.length) {
+                while (active < concurrency && nextIndex >= 0) {
                     const index = nextIndex;
-                    nextIndex += 1;
+                    nextIndex -= 1;
                     active += 1;
 
                     const image = new Image();
@@ -114,9 +115,9 @@ const improvedPreload = `
                         loadedCount += 1;
                         updateLoading();
 
-                        if (index === 0 && loaded) {
+                        if (index === FRAME_COUNT - 1 && loaded) {
                             resizeCanvas();
-                            renderFrame(0, true);
+                            renderFrame(FRAME_COUNT - 1, true);
                         }
 
                         active -= 1;
