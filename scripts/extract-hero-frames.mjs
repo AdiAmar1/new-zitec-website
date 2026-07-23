@@ -77,9 +77,11 @@ const header = `(() => {
         || new URL("../images1/hero-sequence/", scriptEl?.src || document.baseURI).href;
     const FRAME_COUNT = ${frames.length};
     const FRAME_PAD = ${Math.max(pad, 3)};
+    // Cache-bust so replaced frame files are not served from an old browser cache.
+    const FRAME_CACHE = "20260723rev";
     const FRAME_SOURCES = Array.from({ length: FRAME_COUNT }, (_, index) => {
         const n = String(index + 1).padStart(FRAME_PAD, "0");
-        return FRAME_BASE + "frame-" + n + ".jpg";
+        return FRAME_BASE + "frame-" + n + ".jpg?" + FRAME_CACHE;
     });
 `;
 
@@ -96,7 +98,7 @@ const improvedPreload = `
     function preloadFrames() {
         // Load in small batches so remote visitors get progress feedback
         // and weak connections are not flooded with hundreds of requests.
-        // Start from the end so the reversed sequence's first visible frame paints early.
+        // Start from the end so the first visible (reversed) frame paints early.
         const concurrency = 6;
         let nextIndex = FRAME_SOURCES.length - 1;
 

@@ -5,9 +5,11 @@
         || new URL("../images1/hero-sequence/", scriptEl?.src || document.baseURI).href;
     const FRAME_COUNT = 240;
     const FRAME_PAD = 3;
+    // Cache-bust so replaced frame files are not served from an old browser cache.
+    const FRAME_CACHE = "20260723rev";
     const FRAME_SOURCES = Array.from({ length: FRAME_COUNT }, (_, index) => {
         const n = String(index + 1).padStart(FRAME_PAD, "0");
-        return FRAME_BASE + "frame-" + n + ".jpg";
+        return FRAME_BASE + "frame-" + n + ".jpg?" + FRAME_CACHE;
     });
 
 
@@ -30,6 +32,7 @@
     const context = canvas.getContext("2d", { alpha: false });
     const progressTrack = progressBar.parentElement;
     const images = new Array(FRAME_SOURCES.length);
+    // Play end → start: begin on the last frame and scrub toward frame 0.
     const playhead = { frame: FRAME_COUNT - 1 };
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let loadedCount = 0;
@@ -106,7 +109,7 @@
     function preloadFrames() {
         // Load in small batches so remote visitors get progress feedback
         // and weak connections are not flooded with hundreds of requests.
-        // Start from the end so the reversed sequence's first visible frame paints early.
+        // Start from the end so the first visible (reversed) frame paints early.
         const concurrency = 6;
         let nextIndex = FRAME_SOURCES.length - 1;
 
